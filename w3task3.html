@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inp">
+    <button style="display:block;margin: 7px;" onclick="fun()">change</button>
+    <input type="text" id="outp">
+    <script>
+        var num = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split(" ");
+        var tens = "twenty thirty forty fifty sixty seventy eighty ninety".split(" ");
+        var hundred = ' hundred';
+        function number2words(n) 
+        {
+            if (n < 20)
+            {
+                return num[n];
+            }
+            else if (n < 100) 
+            {
+                var digit = n % 10;
+                return tens[~~(n / 10) - 2] + (digit ? "-" + num[digit] : "");
+            }
+            else if (n < 1000)
+            { 
+                return num[~~(n / 100)] + " hundred" + (n % 100 == 0 ? "" : " and " + number2words(n % 100));
+            }
+        }
+        function fun() {
+            var a = document.getElementById("inp").value;
+            document.getElementById("outp").value = number2words(a);
+        }
+    </script>
+</body>
+
+</html>

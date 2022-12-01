@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" band dir="Itr">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="login.js"></script>
+   <title>Document</title>
+   <style>
+      body {
+         margin: 0;
+         padding: 0;
+         font-family: sans-serif;
+         background: url(v960-ning-30.jpg);
+         background-size: cover;
+      }
+
+      .box {
+         width: 300px;
+         padding: 30px;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background: rgba(159, 108, 108, 0.4);
+         text-align: center;
+      }
+
+      .box h1 {
+         color: rgb(0, 0, 0);
+         font-weight: 700;
+      }
+
+      .box input[type="text"],.box input[type="password"]
+      {
+         border: 0;
+         background: none;
+         display: block;
+         margin: 20px auto;
+         text-align: center;
+         border: 3px solid #000000;
+         padding: 14px 10px;
+         width: 220px;
+         outline: none;
+         color: rgb(255, 255, 255);
+         border-radius: 24px;
+         transition: 0.25px;
+
+      }
+      .box input[type="text"]:focus,
+      .box input[type="password"]:focus {
+         width: 270px;
+         border-color: #000000ec;
+      }
+
+      button{
+         border: 0;
+         background: none;
+         display: block;
+         margin: 20px auto;
+         text-align: center;
+         border: 3px solid #000000ec;
+         padding: 14px 50px;
+         outline: none;
+         color: rgb(0, 0, 0);
+         border-radius: 24px;
+         transition: 0.25px;
+         cursor: pointer;
+      }
+
+      button:hover {
+         background: #ffffffec;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="box">
+      <h1>login</h1>
+      
+      <input type="text" name="" placeholder="Enter username" id="username">
+      <input type="password" name="" placeholder="Enter password" id="password">
+      <p id="inv" style="margin:0px;color: red;"></p>
+      <button onclick="validate()">login</button>
+   </div>
+   <script>
+      function validate() 
+      {
+         var username = document.getElementById("username").value;
+         var password = document.getElementById("password").value;
+         if(username.length<10 || password.length<8)
+         {
+            document.getElementById("inv").innerHTML="invalid username or password";
+         }
+         else
+         {
+            window.open("w1task1.html");
+         }
+      }
+   </script>
+</body>
+
+</html>
